@@ -11,25 +11,15 @@ const fs = require('fs');
 const input = fs.readFileSync('test.txt').toString().split('\n');
 
 const data = input.slice(1);
-
-const dataCount = data.map(dataEle => {
-    const countInfo = dataEle.split(' ');
-    const base = countInfo[0];
-    let exp = countInfo[1];
+data.forEach(dataEle => {
+    let [base, exp] = dataEle.split(' ');
     exp = exp % 4;
     if(exp === 0) {
-        exp = 4
-    } 
-    return base ** exp
-});
-
-dataCount.forEach(data => {
-    const dataLast = data % 10;
-    let computerNum = dataLast; 
-    if(dataLast === 0) {
-        computerNum = 10;
+        exp = 4;
     }
-    
+
+    const dataCount = base ** exp;
+    const lastData = dataCount % 10;
+    const computerNum = lastData === 0 ? 10 : lastData;
     console.log(computerNum)
 });
-
