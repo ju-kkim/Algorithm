@@ -10,29 +10,23 @@ https://www.acmicpc.net/problem/1009
 const fs = require('fs');
 const input = fs.readFileSync('test.txt').toString().split('\n');
 
-function distributeData(dataInput) {
-    const data = dataInput.slice(1);
+const data = input.slice(1);
 
-    const dataCount = data.map(dataEle => {
-        const countInfo = dataEle.split(' ');
-        const base = countInfo[0];
-        const exp = countInfo[1];
+const dataCount = data.map(dataEle => {
+    const countInfo = dataEle.split(' ');
+    const base = countInfo[0];
+    let exp = countInfo[1];
+    exp = (exp % 4) + 4;
+    return base ** exp
+});
 
-        return base ** exp
-    });
-
-    dataCount.forEach(data => {
-        const dataLast = data % 10;
-        let computerNum = dataLast; 
-        if(dataLast === 0) {
-            computerNum = 10;
-        }
-        
-        console.log(computerNum)
-    });
-}
-
-(function() {
-    distributeData(input)
-}())
+dataCount.forEach(data => {
+    const dataLast = data % 10;
+    let computerNum = dataLast; 
+    if(dataLast === 0) {
+        computerNum = 10;
+    }
+    
+    console.log(computerNum)
+});
 
