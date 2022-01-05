@@ -16,7 +16,7 @@ const dataCount = data.map(dataEle => {
     const countInfo = dataEle.split(' ');
     const base = countInfo[0];
     let exp = countInfo[1];
-    exp = (exp % 4) + 4;
+    exp = exp % 4;
     return base ** exp
 });
 
