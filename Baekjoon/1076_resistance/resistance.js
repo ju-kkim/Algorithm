@@ -6,23 +6,19 @@ const fs = require('fs');
 const input = fs.readFileSync('test.txt').toString().split('\n');
 
 const table = {
-    'black' : ['0', 1],
-    'brown' : ['1', 10],
-    'red' : ['2', 100],
-    'orange' : ['3', 1000],
-    'yellow' : ['4', 10000],
-    'green' : ['5', 100000],
-    'blue' : ['6', 1000000],
-    'violet' : ['7', 10000000],
-    'grey' : ['8', 100000000],
-    'white' : ['9', 1000000000]
+    'black' : 0,
+    'brown' : 1,
+    'red' : 2,
+    'orange' : 3,
+    'yellow' : 4,
+    'green' : 5,
+    'blue' : 6,
+    'violet' : 7,
+    'grey' : 8,
+    'white' : 9
 }
+const valueA = table[input[0]]
+const valueB = table[input[1]]
+const multiply = table[input[2]]
 
-const info = input.map((color, idx, arr) => {
-    if(idx === arr.length -1) {
-        return table[color][1];
-    }
-    return table[color][0]
-})
-
-console.log((info[0] + info[1]) * info[2])
+console.log(((valueA * 10) + valueB) * (10 ** multiply))
