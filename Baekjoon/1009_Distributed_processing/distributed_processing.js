@@ -17,6 +17,9 @@ const dataCount = data.map(dataEle => {
     const base = countInfo[0];
     let exp = countInfo[1];
     exp = exp % 4;
+    if(exp === 0) {
+        exp = 4
+    } 
     return base ** exp
 });
 
