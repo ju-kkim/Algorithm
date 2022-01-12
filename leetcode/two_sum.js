@@ -19,9 +19,11 @@ var twoSum = function(nums, target) {
                 return
             }
             if(num + nums[i] === target){
-                result = [idx , i]
+                result = [i , idx]
             }
         }
     })
-    return result.sort()
+    return result
 };
+
+console.log(twoSum([3,2,4], 6))
