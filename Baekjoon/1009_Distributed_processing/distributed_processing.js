@@ -8,7 +8,7 @@ https://www.acmicpc.net/problem/1009
 */
 
 const fs = require('fs');
-const input = fs.readFileSync('test.txt').toString().split('\n');
+const input = fs.readFileSync('test.txt').toString().trim().split('\n');
 
 const data = input.slice(1);
 data.forEach(dataEle => {
