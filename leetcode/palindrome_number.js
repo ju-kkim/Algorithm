@@ -8,7 +8,7 @@ For example, 121 is palindrome while 123 is not.
 */
 
 var isPalindrome = function(x) {
-    if(Math.sign(x) === -1) {
+    if(x < 0) {
         return false
     }
     const reverseNum =  parseInt(x.toString().split('').reverse().join(''))
